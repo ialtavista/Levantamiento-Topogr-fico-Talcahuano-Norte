@@ -6,13 +6,13 @@ var map = new ol.Map({
     view: new ol.View({
          maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:32718',
-            //extent: [665220.875000, 5933041.000000, 669233.812500, 5937079.000000],
+            //extent: [665201.187500, 5932926.000000, 669233.812500, 5937078.500000],
             units: 'm'})
     })
 });
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([662342.388428, 5931627.173596, 673596.159560, 5937885.330258], map.getSize());
+map.getView().fit([663785.146215, 5933222.406872, 671900.668447, 5937399.263701], map.getSize());
 
 //full zooms only
 map.getView().setProperties({constrainResolution: true});
@@ -1096,18 +1096,6 @@ let measuring = false;
 
 //layer search
 
-var searchLayer = new SearchLayer({
-    layer: lyr_Cmara_4,
-    colName: 'IDENTIFICA',
-    zoom: 10,
-    collapsed: true,
-    map: map,
-    maxResults: 10,
-});
-map.addControl(searchLayer);
-document.getElementsByClassName('search-layer')[0].getElementsByTagName('button')[0].className += ' fa fa-binoculars';
-document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'Search feature ...';
-    
 
 //scalebar
 
